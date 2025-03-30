@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				arduino: {
+					blue: '#00979D',
+					teal: '#099DAC',
+					dark: '#1D252C',
+					light: '#F1F5F9',
+					orange: '#FF7A00',
+					gray: '#2A3B47',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +93,51 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+				'conveyor-move': {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(-50%)' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'fade-in-up': {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
+				},
+				'spin-slow': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
+				'pulse-glow': {
+					'0%, 100%': { opacity: '1', boxShadow: '0 0 10px rgba(0, 151, 157, 0.7)' },
+					'50%': { opacity: '0.8', boxShadow: '0 0 20px rgba(0, 151, 157, 0.9)' }
+				},
+				'typing': {
+					'from': { width: '0' },
+					'to': { width: '100%' }
+				},
+				'blink': {
+					'from, to': { borderColor: 'transparent' },
+					'50%': { borderColor: 'currentColor' }
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'conveyor-move': 'conveyor-move 20s linear infinite',
+				'float': 'float 6s ease-in-out infinite',
+				'fade-in-up': 'fade-in-up 0.6s ease-out',
+				'fade-in': 'fade-in 0.6s ease-out',
+				'spin-slow': 'spin-slow 15s linear infinite',
+				'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
+				'typing': 'typing 3.5s steps(40, end), blink .75s step-end infinite',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
