@@ -9,6 +9,7 @@ import MechanicalSection from '@/components/MechanicalSection';
 import CodeSection from '@/components/CodeSection';
 import DemoSection from '@/components/DemoSection';
 import ApplicationsSection from '@/components/ApplicationsSection';
+import TeamSection from '@/components/TeamSection';
 import ContactSection from '@/components/ContactSection';
 
 const Index: React.FC = () => {
@@ -41,6 +42,7 @@ const Index: React.FC = () => {
         <CodeSection />
         <DemoSection />
         <ApplicationsSection />
+        <TeamSection />
         <ContactSection />
       </main>
     </div>
