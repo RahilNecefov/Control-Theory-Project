@@ -20,7 +20,7 @@ const ComponentsSection: React.FC = () => {
       icon: <Gauge className="w-10 h-10 text-arduino-blue" />,
       description: "Provides the mechanical power to drive the conveyor belt system",
       price: "1.20 azn",
-      image: "/lovable-uploads/dc motor.jpg"
+      //image: "/lovable-uploads/dc motor.jpg"
     },
     {
       name: "DC Motor Driver (DRV8833)",
