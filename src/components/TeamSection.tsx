@@ -1,23 +1,48 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Users } from 'lucide-react';
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 interface TeamMember {
   name: string;
   role: string;
-  animation?: string;
+  image?: string;
 }
 
 const TeamSection: React.FC = () => {
   const elementsRef = useRef<(HTMLDivElement | null)[]>([]);
   
   const teamMembers: TeamMember[] = [
-    { name: "Fərman Əliyev", role: "Control Engineer" },
-    { name: "Cəbrayıl Qasımlı", role: "Hardware Engineer" },
-    { name: "Tariyel Bədəlzadə", role: "Graphic Designer" },
-    { name: "Rəvan Xıdırov", role: "Control Engineer" },
-    { name: "Rahil Nəcəfov", role: "Web Developer" },
-    { name: "Nigar Sadıqlı", role: "SMM" }
+    { 
+      name: "Rahil Nəcəfov", 
+      role: "Web Developer",
+      image: "/lovable-uploads/fbf351d1-680d-45ed-8ffd-f80335d32862.png"
+    },
+    { 
+      name: "Cəbrayıl Qasımlı", 
+      role: "Hardware Engineer",
+      image: "/lovable-uploads/951049d8-8a21-44fa-b6f7-de630fa4d8f0.png" 
+    },
+    { 
+      name: "Fərman Əliyev", 
+      role: "Control Engineer",
+      image: "/lovable-uploads/0152083f-f341-47b3-a243-c5ba527442e9.png" 
+    },
+    { 
+      name: "Rəvan Xıdırov", 
+      role: "Control Engineer",
+      image: "/lovable-uploads/f3a76111-dda0-4006-b3c3-73096987d095.png" 
+    },
+    { 
+      name: "Tariyel Bədəlzadə", 
+      role: "Graphic Designer",
+      image: "/lovable-uploads/5b592a14-8b39-45e8-9ef3-7fa0dd0e948b.png" 
+    },
+    { 
+      name: "Nigar Sadıqlı", 
+      role: "SMM",
+      image: "/lovable-uploads/5b592a14-8b39-45e8-9ef3-7fa0dd0e948b.png" 
+    }
   ];
   
   useEffect(() => {
@@ -70,13 +95,16 @@ const TeamSection: React.FC = () => {
             <div
               key={index}
               ref={el => elementsRef.current[index + 2] = el}
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg slide-item"
+              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 slide-item"
               style={{ transitionDelay: `${index * 0.1}s` }}
             >
-              <div className="w-20 h-20 mx-auto bg-gradient-to-br from-arduino-blue to-arduino-teal rounded-full flex items-center justify-center mb-4">
-                <span className="text-white text-2xl font-bold">
-                  {member.name.charAt(0)}
-                </span>
+              <div className="mx-auto mb-4 overflow-hidden w-24 h-24 rounded-full border-2 border-arduino-blue">
+                <Avatar className="w-full h-full">
+                  <AvatarImage src={member.image} alt={member.name} />
+                  <AvatarFallback className="bg-gradient-to-br from-arduino-blue to-arduino-teal text-white text-2xl font-bold">
+                    {member.name.charAt(0)}
+                  </AvatarFallback>
+                </Avatar>
               </div>
               <h3 className="text-xl font-semibold text-arduino-dark">{member.name}</h3>
               <p className="text-arduino-gray mt-2">{member.role}</p>
