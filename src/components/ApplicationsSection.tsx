@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Factory, Package, Robot } from 'lucide-react';
+import { Factory, Cpu, Bot, WifiIcon } from 'lucide-react';
 
 const ApplicationsSection: React.FC = () => {
   const elementsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -29,41 +29,52 @@ const ApplicationsSection: React.FC = () => {
   }, []);
 
   return (
-    <section id="applications" className="section bg-white">
+    <section id="applications" className="section bg-arduino-dark text-white">
       <div className="max-w-6xl mx-auto">
         <h2 
           ref={el => elementsRef.current[0] = el}
-          className="text-4xl md:text-5xl font-bold mb-12 text-center text-arduino-dark slide-item"
+          className="text-4xl md:text-5xl font-bold mb-12 text-center slide-item"
         >
-          Where Can We <span className="text-arduino-blue">Use This</span>?
+          Where Can We <span className="text-arduino-orange">Use</span> This?
         </h2>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div 
             ref={el => elementsRef.current[1] = el}
             className="slide-item"
           >
-            <div className="bg-gradient-to-br from-arduino-light to-white p-8 rounded-xl shadow-md h-full flex flex-col">
-              <div className="w-16 h-16 bg-arduino-blue rounded-full flex items-center justify-center mb-6">
-                <Factory className="w-8 h-8 text-white" />
+            <h3 className="text-2xl font-bold mb-6">Real-world Applications</h3>
+            
+            <div className="space-y-6">
+              <div className="bg-arduino-gray/20 p-6 rounded-lg border border-arduino-gray/30 flex items-start">
+                <Factory className="w-8 h-8 text-arduino-orange mr-4 flex-shrink-0" />
+                <div>
+                  <h4 className="text-xl font-semibold mb-2">Manufacturing</h4>
+                  <p className="text-white/80">
+                    Automating small-scale production lines for sorting, quality control, and assembly processes in DIY manufacturing setups.
+                  </p>
+                </div>
               </div>
               
-              <h3 className="text-2xl font-bold mb-4 text-arduino-dark">Small-Scale Production</h3>
+              <div className="bg-arduino-gray/20 p-6 rounded-lg border border-arduino-gray/30 flex items-start">
+                <Cpu className="w-8 h-8 text-arduino-orange mr-4 flex-shrink-0" />
+                <div>
+                  <h4 className="text-xl font-semibold mb-2">Educational Platforms</h4>
+                  <p className="text-white/80">
+                    Teaching automation principles, motor control, and sensor integration in engineering and robotics courses.
+                  </p>
+                </div>
+              </div>
               
-              <ul className="space-y-3 text-arduino-gray mt-auto">
-                <li className="flex items-start">
-                  <span className="text-arduino-orange mr-2">•</span>
-                  <span>Craft workshop automation</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-arduino-orange mr-2">•</span>
-                  <span>Small business packaging</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-arduino-orange mr-2">•</span>
-                  <span>Assembly line for small parts</span>
-                </li>
-              </ul>
+              <div className="bg-arduino-gray/20 p-6 rounded-lg border border-arduino-gray/30 flex items-start">
+                <Bot className="w-8 h-8 text-arduino-orange mr-4 flex-shrink-0" />
+                <div>
+                  <h4 className="text-xl font-semibold mb-2">Hobby Robotics</h4>
+                  <p className="text-white/80">
+                    Creating automated systems for hobby projects like coin sorters, candy dispensers, or custom vending machines.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
           
@@ -72,85 +83,51 @@ const ApplicationsSection: React.FC = () => {
             className="slide-item"
             style={{ transitionDelay: '0.2s' }}
           >
-            <div className="bg-gradient-to-br from-arduino-light to-white p-8 rounded-xl shadow-md h-full flex flex-col">
-              <div className="w-16 h-16 bg-arduino-blue rounded-full flex items-center justify-center mb-6">
-                <Package className="w-8 h-8 text-white" />
-              </div>
+            <h3 className="text-2xl font-bold mb-6">Future Enhancements</h3>
+            
+            <div className="bg-white/10 p-6 rounded-lg">
+              <h4 className="text-xl font-semibold mb-4 text-arduino-orange">What's Next?</h4>
               
-              <h3 className="text-2xl font-bold mb-4 text-arduino-dark">Educational Projects</h3>
-              
-              <ul className="space-y-3 text-arduino-gray mt-auto">
+              <ul className="space-y-4">
                 <li className="flex items-start">
-                  <span className="text-arduino-orange mr-2">•</span>
-                  <span>STEM education demonstrations</span>
+                  <div className="w-8 h-8 bg-arduino-blue rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <WifiIcon className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <h5 className="font-bold">IoT Integration</h5>
+                    <p className="text-white/80">Connect via WiFi/Bluetooth for remote monitoring and control from smartphones</p>
+                  </div>
                 </li>
+                
                 <li className="flex items-start">
-                  <span className="text-arduino-orange mr-2">•</span>
-                  <span>Engineering classroom projects</span>
+                  <div className="w-8 h-8 bg-arduino-blue rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <Cpu className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <h5 className="font-bold">Machine Learning</h5>
+                    <p className="text-white/80">Add computer vision for advanced object recognition and sorting capabilities</p>
+                  </div>
                 </li>
+                
                 <li className="flex items-start">
-                  <span className="text-arduino-orange mr-2">•</span>
-                  <span>Robotics competition platforms</span>
+                  <div className="w-8 h-8 bg-arduino-blue rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <Bot className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <h5 className="font-bold">Multi-Belt Systems</h5>
+                    <p className="text-white/80">Expand to interconnected conveyor networks for more complex automation tasks</p>
+                  </div>
                 </li>
               </ul>
             </div>
-          </div>
-          
-          <div 
-            ref={el => elementsRef.current[3] = el}
-            className="slide-item"
-            style={{ transitionDelay: '0.4s' }}
-          >
-            <div className="bg-gradient-to-br from-arduino-light to-white p-8 rounded-xl shadow-md h-full flex flex-col">
-              <div className="w-16 h-16 bg-arduino-blue rounded-full flex items-center justify-center mb-6">
-                <Robot className="w-8 h-8 text-white" />
-              </div>
-              
-              <h3 className="text-2xl font-bold mb-4 text-arduino-dark">Prototype Testing</h3>
-              
-              <ul className="space-y-3 text-arduino-gray mt-auto">
-                <li className="flex items-start">
-                  <span className="text-arduino-orange mr-2">•</span>
-                  <span>Sensor and actuator validation</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-arduino-orange mr-2">•</span>
-                  <span>Industrial process simulation</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-arduino-orange mr-2">•</span>
-                  <span>Proof-of-concept demonstrations</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <div 
-          ref={el => elementsRef.current[4] = el}
-          className="mt-16 bg-arduino-blue/10 p-8 rounded-xl border border-arduino-blue/30 slide-item"
-        >
-          <h3 className="text-2xl font-bold mb-6 text-arduino-dark">Future Enhancements</h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-              <h4 className="font-bold text-arduino-blue mb-2">AI Integration</h4>
-              <p className="text-sm text-arduino-gray">Computer vision for object identification and sorting</p>
-            </div>
             
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-              <h4 className="font-bold text-arduino-blue mb-2">IoT Control</h4>
-              <p className="text-sm text-arduino-gray">Remote monitoring and operation via smartphone app</p>
-            </div>
-            
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-              <h4 className="font-bold text-arduino-blue mb-2">Multi-stage System</h4>
-              <p className="text-sm text-arduino-gray">Connected conveyor modules for complex operations</p>
-            </div>
-            
-            <div className="bg-white p-4 rounded-lg shadow-sm">
-              <h4 className="font-bold text-arduino-blue mb-2">Data Logging</h4>
-              <p className="text-sm text-arduino-gray">Performance metrics tracking and analysis</p>
+            <div 
+              ref={el => elementsRef.current[3] = el}
+              className="mt-8 p-6 bg-arduino-orange/20 border border-arduino-orange/30 rounded-lg text-center slide-item"
+            >
+              <p className="text-white/90 italic">
+                "The possibilities are limited only by your imagination and creativity."
+              </p>
             </div>
           </div>
         </div>
