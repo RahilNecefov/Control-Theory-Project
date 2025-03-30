@@ -20,21 +20,21 @@ const ComponentsSection: React.FC = () => {
       //icon: <Gauge className="w-10 h-10 text-arduino-blue" />,
       description: "Provides the mechanical power to drive the conveyor belt system",
       price: "1.20 azn",
-      image: "/lovable-uploads/dc motor.jpg"
+      image: "/lovable-uploads/DCMOTOR.jpg"
     },
     {
       name: "DC Motor Driver (DRV8833)",
       //icon: <Cpu className="w-10 h-10 text-arduino-blue" />,
       description: "Controls motor direction and speed with PWM signals",
       price: "5.90 azn",
-      image: "/lovable-uploads/DC Motor Driver (DRV8833).jpg"
+      image: "/lovable-uploads/DCMOTORDRIVER.jpg"
     },
     {
       name: "Motor Speed Sensor",
       //icon: <Gauge className="w-10 h-10 text-arduino-blue" />,
       description: "Detects and measures the rotational speed of the motor for precise control",
       price: "2.66 azn",
-      image: "/lovable-uploads/Motor Speed Sensor.jpg"
+      image: "/lovable-uploads/SpeedSensor.jpg"
     },
     {
       name: "ESP8266/NodeMCU",
