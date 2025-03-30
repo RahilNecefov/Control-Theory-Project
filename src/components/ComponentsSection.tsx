@@ -17,35 +17,35 @@ const ComponentsSection: React.FC = () => {
   const components: ComponentItem[] = [
     {
       name: "DC Motor",
-      icon: <Gauge className="w-10 h-10 text-arduino-blue" />,
+      //icon: <Gauge className="w-10 h-10 text-arduino-blue" />,
       description: "Provides the mechanical power to drive the conveyor belt system",
       price: "1.20 azn",
-      //image: "/lovable-uploads/dc motor.jpg"
+      image: "/lovable-uploads/dc motor.jpg"
     },
     {
       name: "DC Motor Driver (DRV8833)",
-      icon: <Cpu className="w-10 h-10 text-arduino-blue" />,
+      //icon: <Cpu className="w-10 h-10 text-arduino-blue" />,
       description: "Controls motor direction and speed with PWM signals",
       price: "5.90 azn",
       image: "/lovable-uploads/DC Motor Driver (DRV8833).jpg"
     },
     {
       name: "Motor Speed Sensor",
-      icon: <Gauge className="w-10 h-10 text-arduino-blue" />,
+      //icon: <Gauge className="w-10 h-10 text-arduino-blue" />,
       description: "Detects and measures the rotational speed of the motor for precise control",
       price: "2.66 azn",
       image: "/lovable-uploads/Motor Speed Sensor.jpg"
     },
     {
       name: "ESP8266/NodeMCU",
-      icon: <WifiIcon className="w-10 h-10 text-arduino-blue" />,
+      //icon: <WifiIcon className="w-10 h-10 text-arduino-blue" />,
       description: "WiFi-enabled microcontroller for IoT connectivity and control",
       price: "14 azn",
       image: "/lovable-uploads/ESP8266NodeMCU.jpg"
     },
     {
       name: "Conveyor Belt & Frame",
-      icon: <Box className="w-10 h-10 text-arduino-blue" />,
+      //icon: <Box className="w-10 h-10 text-arduino-blue" />,
       description: "Physical components for smooth transport of items",
       image: "/lovable-uploads/conveyor.PNG"
     },
