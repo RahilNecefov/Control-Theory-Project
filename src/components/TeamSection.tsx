@@ -36,7 +36,7 @@ const TeamSection: React.FC = () => {
     { 
       name: "Tariyel Bədəlzadə", 
       role: "Graphic Designer",
-      image: "/lovable-uploads/5b592a14-8b39-45e8-9ef3-7fa0dd0e948b.png" 
+      image: "/lovable-uploads/276164c1-bd45-45c1-92b7-db64ee82135f.png" 
     },
     { 
       name: "Nigar Sadıqlı", 
